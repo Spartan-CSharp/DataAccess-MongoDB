@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 
 using DataAccessLibrary;
 using DataAccessLibrary.Models;
@@ -16,7 +15,7 @@ namespace DataAccessConsoleUI
 		private static IConfiguration _configuration;
 		private static IDataLogic _data;
 
-		static void Main(string[] args)
+		private static void Main(string[] args)
 		{
 			InitializeConfiguration();
 			InitializeDatabaseConnection();
@@ -438,14 +437,14 @@ namespace DataAccessConsoleUI
 
 		private static PersonModel RetrievePerson()
 		{
-			bool selectionvalid = false;
-			int personid = 0;
 			PersonModel output = new PersonModel();
 
 			List<PersonModel> people = _data.GetAllPeople();
 
 			if ( people.Count > 0 )
 			{
+				bool selectionvalid;
+				int personid;
 				do
 				{
 					Console.WriteLine("Please select the person from the following list using the number:");
@@ -479,14 +478,14 @@ namespace DataAccessConsoleUI
 
 		private static AddressModel RetrieveAddress()
 		{
-			bool selectionvalid = false;
-			int addressid = 0;
 			AddressModel output = new AddressModel();
 
 			List<AddressModel> addresses = _data.GetAllAddresses();
 
 			if ( addresses.Count > 0 )
 			{
+				bool selectionvalid;
+				int addressid;
 				do
 				{
 					Console.WriteLine("Please select the address from the following list using the number:");
@@ -520,14 +519,14 @@ namespace DataAccessConsoleUI
 
 		private static EmployerModel RetrieveEmployer()
 		{
-			bool selectionvalid = false;
-			int employerid = 0;
 			EmployerModel output = new EmployerModel();
 
 			List<EmployerModel> employers = _data.GetAllEmployers();
 
 			if ( employers.Count > 0 )
 			{
+				bool selectionvalid;
+				int employerid;
 				do
 				{
 					Console.WriteLine("Please select the employer from the following list using the number:");

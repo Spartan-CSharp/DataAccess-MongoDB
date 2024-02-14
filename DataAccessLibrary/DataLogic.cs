@@ -37,7 +37,7 @@ namespace DataAccessLibrary
 				{
 					if ( personAddress.Id == address.Id )
 					{
-						person.Addresses.Remove(personAddress);
+						_ = person.Addresses.Remove(personAddress);
 						UpdatePerson(person);
 					}
 				}
@@ -50,7 +50,7 @@ namespace DataAccessLibrary
 				{
 					if ( employerAddress.Id == address.Id )
 					{
-						employer.Addresses.Remove(employerAddress);
+						_ = employer.Addresses.Remove(employerAddress);
 						UpdateEmployer(employer);
 					}
 				}
@@ -163,7 +163,7 @@ namespace DataAccessLibrary
 				{
 					if ( personAddress.Id == address.Id )
 					{
-						person.Addresses.Remove(personAddress);
+						_ = person.Addresses.Remove(personAddress);
 						person.Addresses.Add(address);
 						UpdatePerson(person);
 					}
@@ -177,7 +177,7 @@ namespace DataAccessLibrary
 				{
 					if ( employerAddress.Id == address.Id )
 					{
-						employer.Addresses.Remove(employerAddress);
+						_ = employer.Addresses.Remove(employerAddress);
 						employer.Addresses.Add(address);
 						UpdateEmployer(employer);
 					}
